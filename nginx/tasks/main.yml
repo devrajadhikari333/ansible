@@ -1,0 +1,25 @@
+---
+- name: installing httpd
+  import_tasks: httpd.yml
+  when: ansible_distribution == "RedHat"
+
+- name: Copying the index file
+  template: 
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  when: ansible_distribution == "RedHat"
+  notify: start httpd
+
+- name: installing nginx
+  import_tasks: nginx.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: copying the nginx config file
+  template: 
+    src: nginx.conf.j2 
+    dest: /etc/nginx/nginx.conf
+  when: ansible_distribution == "Ubuntu"
+  notify: start nginx
+
+
+

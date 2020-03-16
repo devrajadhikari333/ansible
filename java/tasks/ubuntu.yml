@@ -1,0 +1,5 @@
+---
+- name: installing java in Ubuntu
+  apt: 
+    name: default-jdk
+    state: present

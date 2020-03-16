@@ -1,0 +1,13 @@
+---
+- name: start httpd
+  service:
+    name: httpd
+    state: restarted
+  when: ansible_distribution == "RedHat"
+
+- name: start nginx
+  service: 
+    name: nginx
+    state: restarted
+  when: ansible_distribution == "Ubuntu"
+

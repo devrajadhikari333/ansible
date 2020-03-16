@@ -1,0 +1,6 @@
+---
+- name: Installing java in Redhat
+  yum:
+    name: java
+    state: present
+

@@ -1,0 +1,5 @@
+---
+- name: installing nginx software
+  apt: 
+    name: nginx
+    state: present

@@ -1,0 +1,5 @@
+---
+- name: installing jenkins
+  import_tasks: jenkins.yml
+  when: ansible_distribution == "RedHat"
+

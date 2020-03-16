@@ -1,0 +1,8 @@
+---
+- name: Installing java in Redhat
+  import_tasks: redhat.yml
+  when: ansible_distribution == "RedHat"
+
+- name: Installing java in Ubuntu
+  import_tasks: ubuntu.yml
+  when: ansible_distribution == "Ubuntu" 
